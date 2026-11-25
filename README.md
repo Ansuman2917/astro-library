@@ -1,4 +1,4 @@
-# ARSHIA SWAIN — 3D PORTFOLIO
+# ASTRO LIBRARY — 3D PORTFOLIO
 
 A fully explorable, first-person 3D portfolio built around the existing `Astro_Library.glb`
 model. Explore applied AI projects, machine learning methods, generative AI work and computer
@@ -199,4 +199,4 @@ first load.
 - Collision wireframes are shown only when `import.meta.env.DEV` is true; the setting is hidden in
   production builds.
 - The 3D library model is retained as the portfolio environment; the interface and content are
-  customized for Arshia Swain's resume.
+  customized for the resume.
