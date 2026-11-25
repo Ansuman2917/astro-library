@@ -34,6 +34,22 @@ npm run preview
 
 The preview server runs at `http://localhost:4173`.
 
+## Deploy to GitHub Pages
+
+The site is deployed from `main` by `.github/workflows/deploy.yml`. The workflow builds with
+`VITE_BASE=/astro-library/` so the generated asset URLs work under the project path.
+
+Live site: **https://ansuman2917.github.io/astro-library/**
+
+One-time setup in the GitHub repository:
+
+1. Open **Settings → Pages**.
+2. Under **Build and deployment**, set **Source** to **GitHub Actions**.
+3. Push to `main` (or run the **Deploy to GitHub Pages** workflow manually).
+
+Every later push to `main` deploys automatically. To deploy a build under a different path, change
+`VITE_BASE` in the workflow and push.
+
 ## Controls
 
 | Input | Action |
@@ -58,10 +74,11 @@ mini-map, and head-bob can all be changed in Settings and are persisted to `loca
 - **Rapier physics** — a capsule character with a kinematic character controller, world-space
   trimesh colliders baked from the structural model meshes, a full cylindrical floor, and an
   invisible segmented perimeter to seal the building.
-- **Portfolio interactions** — 12 project and profile entries, 7 portfolio tracks, and 3 focus
-  tables. Every hotspot has a subtle holographic marker, hover feedback, a contextual HUD prompt,
-  and a detailed glass information panel. Movement stays active while an entry or track panel is
-  open.
+- **Portfolio interactions** — exactly 8 glowing information stars: 3 focus tables and the Machine
+  Learning Lab track on the lower floor, plus 4 experience and credentials entries on the upper
+  gallery. The remaining resume content is reachable from the focus-table panels. Every star has
+  hover feedback, a contextual HUD prompt, and a detailed glass information panel. Movement stays
+  active while a panel is open.
 - **Contact and resume** — the entrance track opens email, phone and resume links. The one-page
   PDF lives at `public/resume/Arshia_Swain_OnePager.pdf`.
 - **Focus tables** — three procedural holographic tables with chairs and matching physics
@@ -98,6 +115,7 @@ The editable source for all entries, tracks and focus tables is
 
 ```
 Astro_Library_Website/
+├─ .github/workflows/deploy.yml       # GitHub Pages deployment
 ├─ 3D_Models/Astro_Library.glb        # original model (untouched)
 ├─ public/
 │  ├─ models/Astro_Library.glb       # optimized runtime model
